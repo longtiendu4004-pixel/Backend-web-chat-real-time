@@ -1,0 +1,1 @@
+Các document được taọ ra khi save xuống cứ không phải khi chạy là tạo document

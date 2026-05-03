@@ -1,0 +1,1 @@
+Class ở tầng Service: một cái phục vụ cho nghiệp vụ Đăng ký của cậu (AuthService), và một cái phục vụ cho nội bộ thằng Spring Security (CustomUserDetailsService).
