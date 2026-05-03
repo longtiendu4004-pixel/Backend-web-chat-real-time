@@ -27,7 +27,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                // THÊM ĐÚNG 1 DÒNG NÀY ĐỂ KÍCH HOẠT:
+
                 .securityContext(context -> context.securityContextRepository(securityContextRepository()))
 
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
@@ -54,7 +54,7 @@ public class SecurityConfig {
         // 3. Cho phép gửi mọi header
         configuration.setAllowedHeaders(List.of("*"));
 
-        // 4. BẮT BUỘC LÀ TRUE: Cho phép gửi Cookie JSESSIONID xuyên biên giới
+        // 4. BẮT BUỘC LÀ TRUE: Cho phép gửi Cookie JSESSIONID
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -77,7 +77,7 @@ public class SecurityConfig {
         return new ProviderManager(provider);
     }
 
-    // 4. Công cụ lưu Session (Cực kỳ quan trọng ở Spring Boot 3)
+    // 4. Công cụ lưu Session
     @Bean
     public SecurityContextRepository securityContextRepository() {
         return new HttpSessionSecurityContextRepository();
